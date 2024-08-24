@@ -13,9 +13,11 @@ import grbn.springframework.petclinic.services.VetService;
 import grbn.springframework.petclinic.services.map.SpecialityMapService;
 import grbn.springframework.petclinic.services.map.VetMapService;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.Set;
 
-import static org.assertj.core.api.Assertions.assertThat;
+
 
 class VetControllerTest implements ControllerTests {
 
@@ -44,10 +46,10 @@ class VetControllerTest implements ControllerTests {
 
         String view = vetController.listVets(model);
 
-        assertThat("vets/index").isEqualTo(view);
+        assertEquals("vets/index", view);
 
         Set modelAttribute = (Set) ((ModelMapImpl) model).getMap().get("vets");
+        assertEquals(modelAttribute.size(), 2);
 
-        assertThat(modelAttribute.size()).isEqualTo(2);
     }
 }

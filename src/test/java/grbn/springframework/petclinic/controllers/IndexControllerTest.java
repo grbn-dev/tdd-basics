@@ -12,7 +12,6 @@ import grbn.springframework.petclinic.controllers.ValueNotFoundException;
 
 import java.time.Duration;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -34,7 +33,6 @@ class IndexControllerTest implements ControllerTests {
         assertEquals("index", controller.index(), () -> "Another Expensive Message " +
                 "Make me only if you have to");
 
-        assertThat(controller.index()).isEqualTo("index");
     }
 
     @Test

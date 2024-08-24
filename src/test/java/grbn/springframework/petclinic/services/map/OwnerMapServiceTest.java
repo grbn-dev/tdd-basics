@@ -1,5 +1,9 @@
 package grbn.springframework.petclinic.services.map;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -12,8 +16,6 @@ import grbn.springframework.petclinic.services.PetTypeService;
 import grbn.springframework.petclinic.services.map.OwnerMapService;
 import grbn.springframework.petclinic.services.map.PetMapService;
 import grbn.springframework.petclinic.services.map.PetTypeMapService;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @DisplayName("Owner Map Service Test - ")
 class OwnerMapServiceTest {
@@ -34,7 +36,7 @@ class OwnerMapServiceTest {
     void ownersAreZero() {
         int ownerCount = ownerMapService.findAll().size();
 
-        assertThat(ownerCount).isZero();
+        assertEquals(ownerCount, 0);
     }
 
     @DisplayName("Pet Type - ")
@@ -53,8 +55,7 @@ class OwnerMapServiceTest {
         @Test
         void testPetCount() {
             int petTypeCount = petTypeService.findAll().size();
-
-            assertThat(petTypeCount).isNotZero().isEqualTo(2);
+            assertEquals(petTypeCount, 2);
         }
 
         @DisplayName("Save Owners Tests - ")
@@ -72,8 +73,7 @@ class OwnerMapServiceTest {
                 Owner owner = new Owner(2L, "Joe", "Buck");
 
                 Owner savedOwner = ownerMapService.save(owner);
-
-                assertThat(savedOwner).isNotNull();
+                assertNotNull(savedOwner);
             }
 
             @DisplayName("Save Owners Tests - ")
@@ -85,17 +85,15 @@ class OwnerMapServiceTest {
                 void findOwner() {
 
                     Owner foundOwner = ownerMapService.findById(1L);
-
-                    assertThat(foundOwner).isNotNull();
-                }
+                    assertNotNull(foundOwner);
+                 }
 
                 @DisplayName("Find Owner Not Found")
                 @Test
                 void findOwnerNotFound() {
 
                     Owner foundOwner = ownerMapService.findById(2L);
-
-                    assertThat(foundOwner).isNull();
+                    assertNull(foundOwner);
                 }
             }
         }
@@ -105,7 +103,6 @@ class OwnerMapServiceTest {
     @Test
     void ownersAreStillZero() {
         int ownerCount = ownerMapService.findAll().size();
-
-        assertThat(ownerCount).isZero();
+        assertEquals(ownerCount, 0);
     }
 }

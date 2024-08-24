@@ -1,6 +1,5 @@
 package grbn.springframework.petclinic.controllers;
 
-import javax.validation.Valid;
 
 import grbn.springframework.petclinic.fauxspring.BindingResult;
 import grbn.springframework.petclinic.fauxspring.WebDataBinder;
@@ -8,6 +7,7 @@ import grbn.springframework.petclinic.model.Pet;
 import grbn.springframework.petclinic.model.Visit;
 import grbn.springframework.petclinic.services.PetService;
 import grbn.springframework.petclinic.services.VisitService;
+import jakarta.validation.Valid;
 
 import java.util.Map;
 

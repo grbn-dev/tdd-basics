@@ -12,8 +12,8 @@ import grbn.springframework.petclinic.model.PetType;
 import grbn.springframework.petclinic.services.OwnerService;
 import grbn.springframework.petclinic.services.PetService;
 import grbn.springframework.petclinic.services.PetTypeService;
+import jakarta.validation.Valid;
 
-import javax.validation.Valid;
 import java.util.Collection;
 
 public class PetController {
