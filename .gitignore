@@ -1,0 +1,12 @@
+/target/
+*/target/**
+**/META-INF/
+*.mvn/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
